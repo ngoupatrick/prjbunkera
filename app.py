@@ -1,5 +1,9 @@
 import streamlit as st  # type:ignore
 import requests
+from utils.utils import *
+from manage_user.loadUserFrame import *
+
+# command: streamlit run app.py
 
 def hide_menu(st):
     
@@ -31,12 +35,16 @@ def main():
     )
     #hide footer and header
     hide_menu(st=st)
+    #side menu
+    radio_value = st.sidebar.radio("Available Applications", tuple(t.value for t in listMenu))
     
-    baseREMOTEURL = "https://montegure.deta.dev/basic"
-    baseLocalURL = "http://192.168.5.246:5000/basic"
-    st.write("test")
-    data = requests.get(baseREMOTEURL+"/users").json()
-    st.write(data)
+    if radio_value==listMenu.users.value:        
+        loadWindow(st=st)
+    
+    
+    #st.write("test")
+    
+    #st.write(data)
 
 if __name__ == '__main__':
     main()
