@@ -2,7 +2,7 @@ import streamlit as st  # type:ignore
 import requests
 from utils.utils import *
 from manage_user.loadUserFrame import *
-
+# command: source /home/patrick/Bureau/python/any_prj/envs/env_streamlit/bin/activate
 # command: streamlit run app.py
 
 def hide_menu(st):
@@ -39,12 +39,8 @@ def main():
     radio_value = st.sidebar.radio("Available Applications", tuple(t.value for t in listMenu))
     
     if radio_value==listMenu.users.value:        
-        loadWindow(st=st)
+        loadWindowUser(st=st)
     
-    
-    #st.write("test")
-    
-    #st.write(data)
 
 if __name__ == '__main__':
     main()

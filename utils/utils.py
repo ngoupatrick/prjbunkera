@@ -1,9 +1,7 @@
 import enum
 class listMenu(enum.Enum):
     users = "Users"
-    image = "Image"
-    audio = "Audio"
-    text = "Text"
+    zmq = "ZMQ Messaging"
 
     @classmethod
     def has_value(cls, item):

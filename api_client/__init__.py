@@ -1,4 +1,4 @@
 import requests
 
 baseREMOTEURL = "https://montegure.deta.dev/basic"
-baseLocalURL = "http://192.168.5.246:5000/basic"
+baseLocalURL = "http://192.168.1.20:5000/basic"
